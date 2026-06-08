@@ -151,9 +151,8 @@ export default function Home() {
     >
       {/* ══════ NAVBAR ══════════════════════════════════════════ */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${
-          scrolled ? "shadow-sm" : ""
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${scrolled ? "shadow-sm" : ""
+          }`}
         style={{ backgroundColor: "var(--color-brand-white)" }}
       >
         <nav className="mx-auto flex h-[64px] max-w-[1140px] items-center justify-between px-6">
@@ -172,24 +171,24 @@ export default function Home() {
 
           {/* Nav links */}
           <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#how-it-works"
-              className="text-sm font-semibold text-brand-primary border-b-2 border-brand-primary pb-0.5"
+            <Link
+              href="/#how-it-works"
+              className="text-sm font-medium text-slate-500 hover:text-brand-primary transition-colors"
             >
               How it Works
-            </a>
-            <a
-              href="#skills"
+            </Link>
+            <Link
+              href="/#features"
               className="text-sm font-medium text-slate-500 hover:text-brand-primary transition-colors"
             >
               Features
-            </a>
-            <a
-              href="#skills"
+            </Link>
+            <Link
+              href="/#skills"
               className="text-sm font-medium text-slate-500 hover:text-brand-primary transition-colors"
             >
               Find Skills
-            </a>
+            </Link>
           </div>
 
           {/* Actions */}
@@ -266,6 +265,46 @@ export default function Home() {
                 </button>
               </div>
 
+              {/* Download Buttons */}
+              <div className="flex items-center gap-3 mb-8">
+
+                {/* Google Play */}
+                <a
+                  href="#"
+                  onClick={openModal}
+                  className="flex items-center gap-2.5 bg-black text-white rounded-xl px-4 py-2.5 hover:opacity-80 active:scale-95 transition-all"
+                >
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="gp1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00C6FF" />
+                        <stop offset="100%" stopColor="#00A8E8" />
+                      </linearGradient>
+                      <linearGradient id="gp2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FFD000" />
+                        <stop offset="100%" stopColor="#FF8C00" />
+                      </linearGradient>
+                      <linearGradient id="gp3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FF3A44" />
+                        <stop offset="100%" stopColor="#C31162" />
+                      </linearGradient>
+                      <linearGradient id="gp4" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#32DF84" />
+                        <stop offset="100%" stopColor="#00B057" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M3.18 23.76c.3.16.64.2.97.12L14.39 12 10.76 8.37 3.18 23.76z" fill="url(#gp1)" />
+                    <path d="M20.5 10.55l-2.8-1.6-3.31 3.05 3.31 3.06 2.83-1.62c.81-.46.81-1.63-.03-2.89z" fill="url(#gp2)" />
+                    <path d="M3.18.24C2.84.14 2.47.2 2.18.41L14.39 12 17.7 8.95 4.15.36c-.32-.2-.66-.25-.97-.12z" fill="url(#gp3)" />
+                    <path d="M2.18 23.59c.29.21.66.27.97.17l13.55-8.59L13.39 12 2.18 23.59z" fill="url(#gp4)" />
+                  </svg>
+                  <div className="text-left leading-tight">
+                    <p className="text-[9px] font-medium opacity-80 uppercase tracking-wide">GET IT ON</p>
+                    <p className="text-[14px] font-bold leading-none">Google Play</p>
+                  </div>
+                </a>
+              </div>
+
               {/* Stats */}
               <div className="flex items-center gap-8">
                 <div className="flex items-center gap-2">
@@ -330,11 +369,10 @@ export default function Home() {
                     <button
                       key={i}
                       onClick={() => setCarouselIndex(i)}
-                      className={`rounded-full transition-all duration-300 ${
-                        carouselIndex === i
-                          ? "w-6 h-2 bg-white"
-                          : "w-2 h-2 bg-white/50 hover:bg-white/80"
-                      }`}
+                      className={`rounded-full transition-all duration-300 ${carouselIndex === i
+                        ? "w-6 h-2 bg-white"
+                        : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                        }`}
                     />
                   ))}
                 </div>
@@ -387,8 +425,102 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ══════ FEATURES ══════════════════════════════════════ */}
+        <section
+          id="features"
+          className="pt-10 pb-20 bg-white"
+        >
+          <div className="mx-auto max-w-[1140px] px-6">
+            {/* Heading */}
+            <div className="text-center mb-14">
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-extrabold text-brand-primary mb-3">
+                Features
+              </h2>
+              <div
+                className="mx-auto mb-5 h-1 w-14 rounded-full"
+                style={{ backgroundColor: "var(--color-brand-primary)" }}
+              />
+              <p className="text-sm text-slate-500 leading-7 max-w-[480px] mx-auto">
+                Everything you need to safely and efficiently connect with local
+                talent in your neighborhood.
+              </p>
+            </div>
+
+            {/* Feature cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {/* Card 1 */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: "var(--color-brand-bg-light)" }}
+                >
+                  <Icon name="location_on" fill className="text-xl text-brand-primary" />
+                </div>
+                <h3 className="text-[15px] font-extrabold text-brand-primary mb-2">
+                  Location-Based Discovery
+                </h3>
+                <p className="text-[13px] text-slate-500 leading-5">
+                  Find experts right in your neighborhood with our precise local
+                  matching.
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: "var(--color-brand-bg-light)" }}
+                >
+                  <Icon name="verified_user" fill className="text-xl text-brand-primary" />
+                </div>
+                <h3 className="text-[15px] font-extrabold text-brand-primary mb-2">
+                  Secure Payments
+                </h3>
+                <p className="text-[13px] text-slate-500 leading-5">
+                  Protected escrow-based transactions ensure your money is safe
+                  until the job is done.
+                </p>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: "var(--color-brand-bg-light)" }}
+                >
+                  <Icon name="manage_accounts" fill className="text-xl text-brand-primary" />
+                </div>
+                <h3 className="text-[15px] font-extrabold text-brand-primary mb-2">
+                  Verified Profiles
+                </h3>
+                <p className="text-[13px] text-slate-500 leading-5">
+                  Background-checked and community-vetted providers you can
+                  trust.
+                </p>
+              </div>
+
+              {/* Card 4 */}
+              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                  style={{ backgroundColor: "var(--color-brand-bg-light)" }}
+                >
+                  <Icon name="chat" fill className="text-xl text-brand-primary" />
+                </div>
+                <h3 className="text-[15px] font-extrabold text-brand-primary mb-2">
+                  Direct Communication
+                </h3>
+                <p className="text-[13px] text-slate-500 leading-5">
+                  Seamlessly chat with providers to discuss details and schedule
+                  tasks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ══════ POPULAR LOCAL SKILLS ════════════════════════════ */}
-        <section id="skills" className="py-16 bg-white">
+        <section id="skills" className="py-16 bg-brand-bg-light">
           <div className="mx-auto max-w-[1140px] px-6">
             {/* Header row */}
             <div className="flex items-end justify-between mb-8">
@@ -401,13 +533,13 @@ export default function Home() {
                   find the help you need today.
                 </p>
               </div>
-              <button
-                onClick={openModal}
+              <Link
+                href="/categories"
                 className="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:opacity-70 transition-opacity whitespace-nowrap shrink-0"
               >
                 View All Categories
                 <Icon name="arrow_forward" className="text-base" />
-              </button>
+              </Link>
             </div>
 
             {/* Cards grid */}
