@@ -30,30 +30,39 @@
 .bg-brand-primary {
   background-color: var(--color-brand-primary);
 }
+
 .text-brand-primary {
   color: var(--color-brand-primary);
 }
+
 .border-brand-primary {
   border-color: var(--color-brand-primary);
 }
+
 .bg-brand-bg-light {
   background-color: var(--color-brand-bg-light);
 }
+
 .text-brand-primary-dark {
   color: var(--color-brand-primary-dark);
 }
+
 .bg-brand-teal {
   background-color: var(--color-brand-teal);
 }
+
 .bg-brand-primary-light {
   background-color: var(--color-brand-primary-light);
 }
+
 .bg-brand-white-translucent {
   background-color: var(--color-brand-white-translucent);
 }
+
 .bg-brand-bg-hover {
   background-color: var(--color-brand-bg-hover);
 }
+
 .text-brand-primary-muted {
   color: var(--color-brand-primary-muted);
 }
@@ -64,10 +73,12 @@
 *::after {
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
 body {
   font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -96,6 +107,7 @@ body {
     opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 [data-reveal].is-visible .fade-up,
 [data-reveal].is-visible.fade-up {
   opacity: 1;
@@ -106,9 +118,11 @@ body {
 .delay-100 {
   transition-delay: 100ms !important;
 }
+
 .delay-200 {
   transition-delay: 200ms !important;
 }
+
 .delay-300 {
   transition-delay: 300ms !important;
 }
@@ -118,6 +132,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -136,28 +151,34 @@ body {
 
 /* ─── float animation (hero chips) ────────────────────────── */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
+
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
 
 /* ─── subtle pulse ─────────────────────────────────────────── */
 @keyframes pulse-subtle {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.02);
   }
 }
+
 .animate-pulse-subtle {
   animation: pulse-subtle 4s ease-in-out infinite;
 }
@@ -167,6 +188,7 @@ body {
   position: relative;
   display: inline-block;
 }
+
 .hero-underline::after {
   content: "";
   position: absolute;
@@ -180,6 +202,7 @@ body {
   transform-origin: left;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
 }
+
 [data-reveal].is-visible .hero-underline::after {
   transform: scaleX(1);
 }
@@ -191,3 +214,5 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
+
+/* glass card ends here */
